@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: edu.shadsluiter.comments.CommentsApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.591 s -- in edu.shadsluiter.comments.CommentsApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.754 s -- in edu.shadsluiter.comments.CommentsApplicationTests
