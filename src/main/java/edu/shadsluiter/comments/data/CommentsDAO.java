@@ -84,14 +84,27 @@ public class CommentsDAO {
         comments.removeIf(comment -> comment.getId() == id);
     }
 
-    public List<AppComment> searchForComments(String searchTerm) {
+    // NEW method required by the assignment
+    public List<AppComment> searchComments(String searchTerm) {
+        if (searchTerm == null || searchTerm.trim().isEmpty()) {
+            // no search term: return all comments
+            return comments;
+        }
+
         List<AppComment> results = new ArrayList<>();
+        String lower = searchTerm.toLowerCase();
+
         for (AppComment comment : comments) {
-            if (comment.getContent().toLowerCase().contains(searchTerm.toLowerCase()) ||
-                comment.getAuthor().toLowerCase().contains(searchTerm.toLowerCase())) {
+            if (comment.getContent().toLowerCase().contains(lower) ||
+                comment.getAuthor().toLowerCase().contains(lower)) {
                 results.add(comment);
             }
         }
         return results;
+    }
+
+    // (optional) keep old name but delegate
+    public List<AppComment> searchForComments(String searchTerm) {
+        return searchComments(searchTerm);
     }
 }

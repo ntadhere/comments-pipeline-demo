@@ -33,16 +33,33 @@
 </table>
 
 
-  <!-- Add comment form -->
-  <form th:action="@{/submitComment}" method="post">
-    <label class="form-label" for="content">New Comment</label>
-    <input class="form-control" type="text" id="content" name="content" required>
+ <!-- existing add-comment form -->
+<form th:action="@{/submitComment}" method="post">
+  <div class="mb-3">
+    <label for="content" class="form-label">New Comment</label>
+    <input type="text" class="form-control" id="content" name="content" required>
+  </div>
+  <div class="mb-3">
+    <label for="author" class="form-label">Your name</label>
+    <input type="text" class="form-control" id="author" name="author" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Add Comment</button>
+</form>
 
-    <label class="form-label" for="author">Your Name</label>
-    <input class="form-control" type="text" id="author" name="author" required>
+<!-- NEW: search form -->
+<form th:action="@{/searchComments}" method="get" style="margin-top: 20px;">
+  <div class="mb-3">
+    <label for="searchTerm" class="form-label">Search Comments</label>
+    <input type="text"
+           class="form-control"
+           id="searchTerm"
+           name="searchTerm"
+           th:value="${searchTerm}"
+           placeholder="Enter a word or phrase">
+  </div>
+  <button type="submit" class="btn btn-primary">Search</button>
+</form>
 
-    <button type="submit" class="btn-primary">Add Comment</button>
-  </form>
 </div>
 </body>
 </html>
