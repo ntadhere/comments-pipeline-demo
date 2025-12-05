@@ -1,0 +1,4 @@
+edu\shadsluiter\comments\controllers\MainController.class
+edu\shadsluiter\comments\CommentsApplication.class
+edu\shadsluiter\comments\data\CommentsDAO.class
+edu\shadsluiter\comments\model\AppComment.class
